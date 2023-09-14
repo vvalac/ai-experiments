@@ -1,6 +1,7 @@
 from dotenv import find_dotenv, load_dotenv
 from transformers import pipeline
 from langchain import PromptTemplate, LLMChain, OpenAI
+from langchain.chat_models import ChatOpenAI
 import requests
 import os
 
@@ -29,7 +30,7 @@ def generate_story(scenario):
     STORY:
     """
     prompt = PromptTemplate(template=template, input_variables=["scenario"])
-    story_llm = LLMChain(llm=OpenAI(
+    story_llm = LLMChain(llm=ChatOpenAI(
         model_name="gpt-3.5-turbo", temperature=1), prompt=prompt, verbose=True)
     
     story = story_llm.predict(scenario=scenario)
