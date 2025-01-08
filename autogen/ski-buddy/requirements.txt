@@ -1,0 +1,10 @@
+beautifulsoup4
+autogen-agentchat==0.4.0.dev13
+autogen-ext[openai]==0.4.0.dev13
+python-dotenv
+pydantic-core
+azure-core
+azure-identity
+playwright
+langchain-community
+nest-asyncio
